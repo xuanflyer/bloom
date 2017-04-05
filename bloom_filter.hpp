@@ -22,6 +22,7 @@
 #include <algorithm>
 #include <cmath>
 #include <cstddef>
+#include <cstdlib>
 #include <iterator>
 #include <limits>
 #include <string>
@@ -271,7 +272,7 @@ public:
       ++inserted_element_count_;
    }
 
-   template<typename T>
+   template <typename T>
    inline void insert(const T& t)
    {
       // Note: T must be a C++ POD type.
@@ -288,7 +289,7 @@ public:
       insert(reinterpret_cast<const unsigned char*>(data),length);
    }
 
-   template<typename InputIterator>
+   template <typename InputIterator>
    inline void insert(const InputIterator begin, const InputIterator end)
    {
       InputIterator itr = begin;
@@ -317,7 +318,7 @@ public:
       return true;
    }
 
-   template<typename T>
+   template <typename T>
    inline bool contains(const T& t) const
    {
       return contains(reinterpret_cast<const unsigned char*>(&t),static_cast<std::size_t>(sizeof(T)));
@@ -333,7 +334,7 @@ public:
       return contains(reinterpret_cast<const unsigned char*>(data),length);
    }
 
-   template<typename InputIterator>
+   template <typename InputIterator>
    inline InputIterator contains_all(const InputIterator begin, const InputIterator end) const
    {
       InputIterator itr = begin;
@@ -351,7 +352,7 @@ public:
       return end;
    }
 
-   template<typename InputIterator>
+   template <typename InputIterator>
    inline InputIterator contains_none(const InputIterator begin, const InputIterator end) const
    {
       InputIterator itr = begin;
